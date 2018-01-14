@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+	name="lodentech-camel-demo">
+
+
+	<feature name="camel-demo" version="${project.version}">
+	
+		<bundle>mvn:${groupId}/camel-demo-java-dsl/${project.version}</bundle>
+		<bundle>mvn:${groupId}/camel-demo-blueprint/${project.version}</bundle>
+
+		<!-- * when installing the feature, install configuration settings too -->
+		<configfile finalname="${karaf.etc}/com.lodentech.camel.demo.cfg"
+			override="false">
+			mvn:${groupId}/camel-demo-feature/${project.version}/cfg/configuration
+		</configfile>
+
+		<!-- * define project dependencies -->
+		<feature version="[2.20.1,2.21)">camel-core</feature>
+		<feature version="[2.20.1,2.21)">camel-blueprint</feature>
+
+	</feature>
+
+</features>
