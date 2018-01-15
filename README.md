@@ -16,3 +16,5 @@ Install camel into karaf
 
 Install camel-demo into karaf
 * `feature:repo-add mvn:com.lodentech.camel-demo/camel-demo-feature/0.0.1-SNAPSHOT/xml`
+* `feature:install camel-demo`
+
